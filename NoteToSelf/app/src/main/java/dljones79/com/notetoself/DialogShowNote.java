@@ -67,13 +67,13 @@ public class DialogShowNote extends DialogFragment {
 
         /*
         This next block of code will listen for a click on the button, and dismiss (close)
-        the dialog window when the user clicks.  This is done with an anonymouse class
+        the dialog window when the user clicks.  This is done with an anonymous class
         in the onClick method.
          */
 
         Button btnOK = (Button) dialogView.findViewById(R.id.btnOK);
 
-        builder.setView(dialogView).setMessage("Your Note");
+        builder.setView(dialogView).setTitle("Your Note");
 
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
