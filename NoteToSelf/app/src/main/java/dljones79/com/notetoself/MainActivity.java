@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
@@ -28,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
     private boolean mSound;
     private int mAnimOption;
     private SharedPreferences mPrefs;
+
+    Animation mAnimFlash;
+    Animation mFadeIn;
 
     // region overridden methods
     @Override
@@ -112,6 +117,22 @@ public class MainActivity extends AppCompatActivity {
         mPrefs = getSharedPreferences("Note to self", MODE_PRIVATE);
         mSound  = mPrefs.getBoolean("sound", true);
         mAnimOption = mPrefs.getInt("anim option", SettingsActivity.FAST);
+
+        mAnimFlash = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.flash);
+        mFadeIn = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
+
+        // Set the rate of flash based on settings
+        if(mAnimOption == SettingsActivity.FAST){
+
+            mAnimFlash.setDuration(100);
+            Log.i("anim = ",""+ mAnimOption);
+        }else if(mAnimOption == SettingsActivity.SLOW){
+
+            Log.i("anim = ",""+ mAnimOption);
+            mAnimFlash.setDuration(1000);
+        }
+
+        mNoteAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -218,6 +239,13 @@ public class MainActivity extends AppCompatActivity {
 
             // Hide any ImageView widgets that are not relevant
             Note tempNote = noteList.get(whichItem);
+
+            // To animate or not to animate
+            if (tempNote.isImportant() && mAnimOption != SettingsActivity.NONE ) {
+                view.setAnimation(mAnimFlash);
+            }else{
+                view.setAnimation(mFadeIn);
+            }
 
             if (!tempNote.isImportant()){
                 ivImportant.setVisibility(View.GONE);
