@@ -17,7 +17,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/textView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
     <TextView
         android:text="@string/sound_title"
