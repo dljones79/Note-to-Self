@@ -1,77 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:padding="10dp">
 
     <EditText
+        android:id="@+id/editTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/editTitle"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="35dp"
-        android:hint="@string/title_hint" />
+        android:ems="10"
+        android:hint="@string/title_hint"
+        android:inputType="textPersonName" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_below="@+id/editTitle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:id="@+id/editDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editTitle"
         android:layout_marginTop="35dp"
-        android:hint="@string/description_hint" />
+        android:ems="10"
+        android:hint="@string/description_hint"
+        android:inputType="textPersonName" />
 
     <CheckBox
-        android:text="@string/idea_checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editDescription"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:id="@+id/checkBoxIdea"
-        android:layout_marginTop="35dp" />
-
-    <CheckBox
-        android:text="@string/todo_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBoxIdea"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/editDescription"
+        android:layout_marginTop="35dp"
+        android:text="@string/idea_checkbox" />
+
+    <CheckBox
         android:id="@+id/checkBoxTodo"
-        android:layout_marginTop="35dp" />
-
-    <CheckBox
-        android:text="@string/important_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBoxTodo"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/checkBoxIdea"
+        android:layout_marginTop="35dp"
+        android:text="@string/todo_checkbox" />
+
+    <CheckBox
         android:id="@+id/checkBoxImportant"
-        android:layout_marginTop="35dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/checkBoxTodo"
+        android:layout_marginTop="35dp"
+        android:text="@string/important_checkbox" />
 
     <Button
-        android:text="@string/ok_button"
+        android:id="@+id/btnOK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/btnCancel"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/btnOK" />
+        android:layout_alignParentRight="true"
+        android:text="@string/ok_button" />
 
     <Button
-        android:text="@string/cancel_button"
+        android:id="@+id/btnCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnCancel"
-        android:layout_below="@+id/checkBoxImportant"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="35dp" />
+        android:layout_below="@+id/checkBoxImportant"
+        android:layout_marginTop="35dp"
+        android:text="@string/cancel_button" />
+
+    <Button
+        android:id="@+id/captureButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnOK"
+        android:layout_centerHorizontal="true"
+        android:text="Capture" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="200dp"
+        app:srcCompat="@mipmap/ic_launcher" />
 </RelativeLayout>
