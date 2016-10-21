@@ -13,6 +13,8 @@ import android.widget.TextView;
 public class DialogShowNote extends DialogFragment {
 
     // Member Variables
+    public static final String NOTE_EXTRA = "dljones79.com.notetoself.widget.Note";
+
     private Note mNote;
 
     @Override

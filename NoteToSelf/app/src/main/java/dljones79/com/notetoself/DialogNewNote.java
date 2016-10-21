@@ -23,6 +23,7 @@ import java.util.Date;
 public class DialogNewNote extends DialogFragment {
 
     private static final int CAMERA_REQUEST = 123;
+    public static final String ADD_EXTRA = "dljones79.com.notetoself.widget.Add";
 
     private Uri mImageUri = Uri.EMPTY;
     String mCurrentPhotoPath;
@@ -91,7 +92,7 @@ public class DialogNewNote extends DialogFragment {
                 newNote.setIdea(checkBoxIdea.isChecked());
                 newNote.setTodo(checkBoxTodo.isChecked());
                 newNote.setImportant(checkBoxImportant.isChecked());
-                newNote.setUri(mImageUri);
+                //TODO newNote.setUri(mImageUri);
 
                 // Get a reference to MainActivity
                 MainActivity callingActivity = (MainActivity) getActivity();

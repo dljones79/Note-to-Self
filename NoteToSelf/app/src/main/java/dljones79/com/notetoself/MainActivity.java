@@ -234,9 +234,6 @@ public class MainActivity extends AppCompatActivity {
             mSerializer = new JSONSerializer("NoteToSelf.json",
                     MainActivity.this.getApplicationContext());
 
-            mSerializer = new JSONSerializer("NoteToSelf.json",
-                    MainActivity.this.getApplicationContext());
-
             try {
                 noteList = mSerializer.load();
             } catch (Exception e) {

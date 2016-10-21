@@ -3,23 +3,23 @@ package dljones79.com.notetoself;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.net.Uri;
+import java.io.Serializable;
 
-public class Note {
+public class Note implements Serializable {
 
     private static final String JSON_TITLE = "title";
     private static final String JSON_DESCRIPTION = "description";
     private static final String JSON_IDEA = "idea" ;
     private static final String JSON_TODO = "todo";
     private static final String JSON_IMPORTANT = "important";
-    private static final String JSON_URI = "uri";
+    //TODO private static final String JSON_URI = "uri";
 
     private String mTitle;
     private String mDescription;
     private boolean mIdea;
     private boolean mTodo;
     private boolean mImportant;
-    private Uri mUri;
+    //private Uri mUri;
 
     // Constructor
     // Only used when new is called with a JSONObject
@@ -30,7 +30,7 @@ public class Note {
         mIdea = jo.getBoolean(JSON_IDEA);
         mTodo = jo.getBoolean(JSON_TODO);
         mImportant = jo.getBoolean(JSON_IMPORTANT);
-        mUri = Uri.parse(jo.getString(JSON_URI));
+        //TODO mUri = Uri.parse(jo.getString(JSON_URI));
     }
 
 
@@ -82,6 +82,8 @@ public class Note {
         mImportant = important;
     }
 
+    //TODO Fix
+    /*
     public Uri getUri() {
         return mUri;
     }
@@ -89,6 +91,7 @@ public class Note {
     public void setUri(Uri uri) {
         mUri = uri;
     }
+    */
 
     public JSONObject convertToJSON() throws JSONException{
 
@@ -99,7 +102,7 @@ public class Note {
         jo.put(JSON_IDEA, mIdea);
         jo.put(JSON_TODO, mTodo);
         jo.put(JSON_IMPORTANT, mImportant);
-        jo.put(JSON_URI, mUri.toString());
+        //TODO jo.put(JSON_URI, mUri.toString());
 
         return jo;
     }
